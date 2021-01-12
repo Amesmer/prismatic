@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/demo01/demo01",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "yellow",
+    "navigationBarBackgroundColor": "#0094ff",
+    "navigationBarTitleText": "myApplication",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/demo01/demo01",
+      "text": "首页",
+      "iconPath": "./icons/icon-test.png",
+      "selectedIconPath": "./icons/icon-test.png"
+    },
+    {
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "./icons/icon-test_1.png",
+      "selectedIconPath": "./icons/icon-test_1.png"
+    },
+    {
+      "pagePath": "pages/logs/logs",
+      "text": "首页",
+      "iconPath": "./icons/icon-test_2.png",
+      "selectedIconPath": "./icons/icon-test_2.png"
+    }],
+    "color": "#0094ff",
+    "selectedColor": "#ff5533",
+    "backgroundColor": "#eee",
+    "position": "top"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
