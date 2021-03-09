@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实现状态切换</title>
+</head>
+
+<body>
+
+
+    <script>
+        const PENDING = 'pending'
+        const FULFILLED = 'fulfilled'
+        const REJECTED = 'rejected'
+        class Promise2 {
+            constructor(executor) {
+                this.status = 'pending'
+                this.value = null
+                this.reason = null
+                this.onFulfilledCB=[]//成功回调队列
+                this.onRedjectedCB=[]//失败回调队列
+                const resolve = (value) => {
+                    if(value instanceof this.constructor){
+                        value.then(resolve,reject)//promise2解决后将外层的promise也解决
+                        return
+                    }
+                    if (this.status == PENDING) {
+                        this.status = FULFILLED
+                        this.value = value
+                        setTimeout(() => {
+                         this.onFulfilledCB.forEach(callback=>{
+                             callback(this.value)
+                         })   
+                        });
+                    }
+
+                }
+                const reject = (reason) => {
+                    if (this.status == PENDING) {
+                        this.status = REJECTED
+                        this.reason = reason
+                        setTimeout(() => {
+                         this.onRedjectedCB.forEach(callback=>{
+                             callback(this.reason)
+                         })   
+                        });
+                    }
+                }
+                executor(resolve,reject)
+            }
+            then(onFulfilled,onRedjected){
+                if(this.status==FULFILLED){
+                    setTimeout(() => {
+                     onFulfilled(this.value)   
+                    });
+                }
+
+                if(this.status==REJECTED){
+                    setTimeout(() => {
+                     onRedjected(this.reason)   
+                    });
+                }
+                if(this.status==PENDING){
+                    this.onFulfilledCB.push(onFulfilled)
+                    this.onRedjectedCB.push(onRedjected)
+                }
+
+            }
+
+
+        }
+
+
+        let p=new Promise2((resolve,reject)=>{
+            // setTimeout(() => {
+            //     resolve(1)
+            //     reject(222)
+            // }, 5000);
+            console.log(1);
+            resolve(2)
+            console.log(3);
+            
+        })
+        p.then(val=>{
+            console.log(val);
+        })
+    </script>
+</body>
+
+</html>
