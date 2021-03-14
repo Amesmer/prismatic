@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //value
+/*    let obj = {
+      name:'zs'
+    }
+    Object.defineProperty(obj,'age',{
+      value:28
+    })*/
+
+    //writable
+/*    let obj = {
+      name:'zs'
+    }
+    Object.defineProperty(obj,'age',{
+      value:18,
+      writable:true
+    })*/
+
+    //enumerable
+/*    let obj = {
+      name:'zs'
+    }
+    Object.defineProperty(obj,'age',{
+      value:18,
+      writable:true,
+      enumerable:true
+    })
+    for (let objKey in obj) {
+      console.log(objKey);
+    }*/
+
+    //configurable
+/*        let obj = {
+          name:'zs'
+        }
+        Object.defineProperty(obj,'age',{
+          value:18,
+          writable:true,
+          enumerable:true,
+          configurable:false,
+        })*/
+
+//getter setter
+            let obj = {
+              name:'zs'
+            }
+            let initvalue = 18
+            Object.defineProperty(obj,'age',{
+              enumerable:true,
+              configurable:false,
+              get:function () {
+                console.log('age被获取了');
+                return initvalue
+              },
+              set:function (value) {
+                console.log('设置了age的值，'+value);
+                initvalue = value
+              }
+            })
+</script>
+</body>
+</html>

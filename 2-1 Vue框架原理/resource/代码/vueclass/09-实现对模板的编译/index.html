@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    123
+    <p>{{name}}</p>
+    333
+</div>
+<script src="codegen/codegen.js"></script>
+<script src="parser/parser.js"></script>
+<script src="index.js"></script>
+<script>
+let vm = new Vue({
+  el:'div',
+  data:{
+    name:'zs',
+    city:'wuhan'
+  },
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="index.js"></script>
+<script>
+    let vm = new Vue({
+      data:{
+        message:'hello vue.js',
+        hobbys:['吃饭','运动']
+      },
+      watch:{
+        person() {
+          console.log('person发生了变化');
+        },
+        hobbys() {
+          console.log('hobbys发生了变化');
+        }
+      }
+    })
+    vm.hobbys.push('写代码')
+</script>
+</body>
+</html>

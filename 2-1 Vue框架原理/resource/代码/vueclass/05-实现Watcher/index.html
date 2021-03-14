@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="index.js"></script>
+<script>
+    let vm = new Vue({
+      data:{
+        message:'hello vue.js',
+        name:'zs'
+      },
+      watch:{
+        message() {
+          this.name = 'ls'
+          console.log('message发生了变化1');
+        },
+        name() {
+          console.log('123');
+        }
+      }
+    })
+    vm.message = 2
+</script>
+</body>
+</html>

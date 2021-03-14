@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div>
+    123
+    <p>{{name}} {{name}} 111</p>
+    333
+</div>
+<script src="../parser/parser.js"></script>
+<script src="codegen.js"></script>
+<script>
+  let ast = parser(document.querySelector('div').outerHTML)
+  console.log(ast);
+  let codeObj = generate(ast)
+    console.log(codeObj);
+</script>
+</body>
+</html>

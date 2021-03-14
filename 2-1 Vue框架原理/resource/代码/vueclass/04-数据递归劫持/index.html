@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="index.js"></script>
+<script>
+    let vm = new Vue({
+      data:{
+        message:'hello vue.js',
+        person:{
+          name:'zs',
+          city:{
+            cityName:'wuhan'
+          }
+        }
+      }
+    })
+    //vm.person.name = 'ls'
+    vm.person.city.cityName = 'beijing'
+</script>
+</body>
+</html>

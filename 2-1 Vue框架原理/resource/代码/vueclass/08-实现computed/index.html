@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="index.js"></script>
+<script>
+/*  let vm = new Vue({
+    data:{
+      a:{}
+    },
+    watch:{
+      x() {
+        console.log('监听x');
+      }
+    },
+    computed:{
+      x() {
+        console.log('计算x');
+        return this.a
+      }
+    }
+  })*/
+let vm = new Vue({
+  data:{
+    person:{
+      name:'zs'
+    }
+  },
+  watch:{
+    x() { //2号watcher
+      console.log('x监听');
+    }
+  },
+  computed:{
+    x() { //1号watcher
+      console.log('x计算');
+      return JSON.stringify(this.person)
+    }
+  }
+})
+</script>
+</body>
+</html>

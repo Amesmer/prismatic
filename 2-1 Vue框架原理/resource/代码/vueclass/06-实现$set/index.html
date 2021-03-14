@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="index.js"></script>
+<script>
+    let vm = new Vue({
+      data:{
+        message:'hello vue.js',
+        person:{
+          name:'zd'
+        }
+      },
+      watch:{
+        person() {
+          console.log('person发生了变化');
+        },
+      }
+    })
+    vm.$set(vm.person,'age',18)
+</script>
+</body>
+</html>
